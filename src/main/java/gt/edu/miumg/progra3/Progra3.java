@@ -13,24 +13,23 @@ import java.util.Scanner;
 public class Progra3 {
 
     public static void main(String[] args) {
-        /*LinkedList linkedList = new LinkedList();
-        linkedList.insert(2);
-        linkedList.insert(15);
-        linkedList.insert(500);
-        linkedList.insert(11);
-        linkedList.printAll();
-        linkedList.find(500);
-        linkedList.find(10);*/
-        //Stack stack = new Stack();
-        Queue queue = new Queue();
-        queue.push(2);
-        queue.push(15);
-        queue.size();
-        queue.push(500);
-        queue.push(11);
-        queue.pop();
-        queue.push(19);
-        queue.size();
-        queue.flush();
+        LinkedList linkedList = new LinkedList();
+        linkedList.push(5);
+        linkedList.push(10);
+        linkedList.push(40);
+        linkedList.push(75);
+        linkedList.push(25);
+        linkedList.push(28);
+        linkedList.push(73);
+        linkedList.push(43);
+        linkedList.push(87);
+        linkedList.push(39);
+        linkedList.push(95);
+        linkedList.push(13);
+        linkedList.push(11);
+        linkedList.push(1);
+        System.out.println(linkedList.size());
+        System.out.println(linkedList.getTotal());
+        System.out.println(linkedList.getGreater());
     }
 }

@@ -13,10 +13,7 @@ public class Stack {
     Node first;
     
     public boolean isEmpty() {
-        if (first == null) {
-            return true;
-        }
-        return false;
+        return first == null;
     }
     
     public void push(int data) {
@@ -30,13 +27,19 @@ public class Stack {
         }
     }
     
-    public void pop() {
+    public void pop2() {
         if (isEmpty()) {
             System.out.println("La pila esta vacia");
         } else {
             System.out.println("Sacar: " + first.data);
             first = first.next;
         }
+    }
+    
+    public int pop() {
+        int data = first.data;
+        first = first.next;
+        return data;
     }
     
     public void find(int data) {

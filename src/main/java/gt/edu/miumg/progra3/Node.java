@@ -9,20 +9,30 @@ package gt.edu.miumg.progra3;
  * @author melgust
  */
 public class Node {
-    
+
     int data;
     Node next;
 
+    public Node() {
+    }
+    
+    /**
+     * Este es un comentario en codigo fuente
+     * @param data 
+     */
     public Node(int data) {
         this.data = data;
-        this.next = null;
     }
 
+    /**
+     * Para obtener datos del nodo
+     * @return objeto persona
+     */
     public int getData() {
         return data;
     }
 
-    public void setData(int data) {
+    public void setData(char data) {
         this.data = data;
     }
 
@@ -33,5 +43,5 @@ public class Node {
     public void setNext(Node next) {
         this.next = next;
     }
-    
+
 }

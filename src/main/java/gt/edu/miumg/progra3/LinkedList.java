@@ -13,72 +13,59 @@ public class LinkedList {
     Node first, last;
     
     public boolean isEmpty() {
-        if (last == null) {
-            return true;
-        }
-        return false;
+        return last == null;
     }
     
-    public void insert(int data) {
+    public void push(int data) {
         Node node = new Node(data);
         if (isEmpty()) {
             first = node;
             last = node;
         } else {
-            last.next = node;
+            last.setNext(node);
             last = node;
         }
     }
     
-    public void printAll() {
-        if (isEmpty())
-            System.out.println("Lista vacia");
-        else {
-            Node aux = first;
-            System.out.println(aux.data);
-            while (aux.next != null) {
-                aux = aux.next;
-                System.out.println(aux.data);
-            }
-        }
+    public int pop() {
+        int data = first.getData();
+        first = first.getNext();
+        return data;
     }
     
-    public void find(int data) {
-        if (isEmpty())
-            System.out.println("Lista vacia");
-        else {
-            Node aux = first;
-            while (aux != null) {
-                if (aux.data == data) {
-                    System.out.println("Encontrado: " + aux.data);
-                    return;
-                }
-                aux = aux.next;
-            }
-            System.out.println("No se encontro el dato " + data);
+    public int size() {
+        Node aux = first;
+        int total = 0;
+        while (aux != null) {            
+            total++;
+            aux = aux.getNext();
         }
+        return total;
     }
     
-    public void delete(int data) {
-        if (isEmpty())
-            System.out.println("Lista vacia");
-        else {
-            Node aux = first;
-            Node before = null;
-            while (aux != null) {
-                if (aux.data == data) {
-                    if (before == null) {
-                        first = aux.next;
-                    } else {
-                        before.next = aux.next;
-                    }
-                    return;
-                }
-                before = aux;
-                aux = aux.next;
-            }
-            System.out.println("No se encontro el dato " + data);
+    public int getTotal() {
+        Node aux = first;
+        int total = 0;
+        while (aux != null) {            
+            total += aux.getData();
+            aux = aux.getNext();
         }
+        return total;
+    }
+    
+    public int getGreater() {
+        Node aux = first;
+        int greater = 0;
+        if (aux != null) {
+            greater = aux.getData();
+        }
+        while (aux != null) {            
+            if (aux.getData() > greater) {
+                greater = aux.getData();                
+            }
+            aux = aux.getNext();
+        }
+        return greater;
     }
     
     public void clear() {

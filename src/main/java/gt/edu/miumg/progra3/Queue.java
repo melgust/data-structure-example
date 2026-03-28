@@ -12,6 +12,10 @@ public class Queue {
     
     Node first, last;
     
+    /**
+     * Valida si la cola esta vacia
+     * @return falso en caso vacio y true si no lo esta
+     */
     public boolean isEmpty() {
         if (first == null) {
             return true;
@@ -19,7 +23,7 @@ public class Queue {
         return false;
     }
     
-    public void push(int data) {
+    public void push(char data) {
         Node node = new Node(data);
         System.err.println("Insertar: " + data);
         if (isEmpty()) {
@@ -33,7 +37,7 @@ public class Queue {
     
     public void pop() {
         if (isEmpty()) {
-            System.out.println("La pila esta vacia");
+            System.out.println("La cola esta vacia");
         } else {
             System.out.println("Sacar: " + first.data);
             first = first.next;
@@ -42,7 +46,7 @@ public class Queue {
     
     public void find(int data) {
         if (isEmpty())
-            System.out.println("Lista vacia");
+            System.out.println("Cola vacia");
         else {
             Node aux = first;
             while (aux != null) {
